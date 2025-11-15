@@ -2,6 +2,7 @@ import AboutPage from '@/views/AboutPage.vue'
 import ContactPage from '@/views/ContactPage.vue'
 import HomePage from '@/views/HomePage.vue'
 import MenuPage from '@/views/MenuPage.vue'
+import SplashPage from '@/views/SplashPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -9,6 +10,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: '',
+      component: SplashPage,
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomePage,
     },

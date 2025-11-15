@@ -1,5 +1,14 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-brew-cream: #fffbeb;
+  --color-brew-tan: #d3ad7f;
+  --color-brew-brown: #5e361c;
+  --color-brew-dark: #1e1e1e;
+  --font-barna: 'Barna', serif;
+  --font-martello: 'Martello', serif;
+}
+
 * {
   margin: 0;
   padding: 0;
