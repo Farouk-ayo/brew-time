@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @import 'tailwindcss';
 
 @theme {
@@ -5,13 +7,13 @@
   --color-brew-tan: #d3ad7f;
   --color-brew-brown: #5e361c;
   --color-brew-dark: #1e1e1e;
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-inter: 'Inter', sans-serif;
   --font-barna: 'Barna', serif;
   --font-martello: 'Martello', serif;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -23,6 +25,17 @@ body {
   padding: 0;
   background-color: #0a0a0a;
   color: #ffffff;
+  font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bebas);
+  letter-spacing: 0.02em;
 }

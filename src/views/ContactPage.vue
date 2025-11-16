@@ -1,60 +1,46 @@
 <template>
-  <div class="contact-page">
-    <div class="container">
-      <h1 class="page-title">Get In Touch</h1>
+  <TheNavbar />
 
-      <div class="contact-content">
-        <div class="contact-info">
-          <h2>Visit Us</h2>
-          <p>123 Coffee Street</p>
-          <p>Brew City, BC 12345</p>
-          <p>Phone: (555) 123-4567</p>
-          <p>Email: hello@brewtime.com</p>
-        </div>
-
-        <div class="contact-form">
-          <h2>Send a Message</h2>
-          <form @submit.prevent="handleSubmit">
-            <div class="form-group">
-              <input type="text" placeholder="Your Name" v-model="formData.name" required />
-            </div>
-
-            <div class="form-group">
-              <input type="email" placeholder="Your Email" v-model="formData.email" required />
-            </div>
-
-            <div class="form-group">
-              <textarea
-                placeholder="Your Message"
-                v-model="formData.message"
-                rows="5"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
-        </div>
-      </div>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+      <!-- Desktop Background -->
+      <img
+        src="@/assets/images/bg-contact.png"
+        alt=""
+        class="hidden md:block w-full h-full object-cover"
+      />
+      <!-- Mobile Background -->
+      <img
+        src="@/assets/images/bg-contact-mobile.png"
+        alt=""
+        class="block md:hidden w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/70"></div>
     </div>
-  </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 sm:px-6">
+      <h1
+        class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-brew-cream tracking-tight"
+      >
+        CONTACT
+      </h1>
+    </div>
+  </section>
+
+  <!-- Contact Content Section -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Your contact content will go here -->
+      <p class="text-brew-cream text-center text-lg sm:text-xl">Contact form coming soon...</p>
+    </div>
+  </section>
+  <TheFooter />
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-
-const formData = reactive({
-  name: '',
-  email: '',
-  message: '',
-})
-
-const handleSubmit = () => {
-  console.log('Form submitted:', formData)
-  alert('Message sent! (This is a demo)')
-  // Reset form
-  formData.name = ''
-  formData.email = ''
-  formData.message = ''
-}
+import TheFooter from '@/components/layout/TheFooter.vue'
+import TheNavbar from '@/components/layout/TheNavbar.vue'
 </script>

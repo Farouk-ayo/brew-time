@@ -1,43 +1,46 @@
 <template>
-  <div class="about-page">
-    <div class="container">
-      <h1 class="page-title">About BrewTime</h1>
+  <TheNavbar />
 
-      <section class="story-section">
-        <h2>Our Story</h2>
-        <p>
-          BrewTime was founded with a simple mission: to create a space where coffee lovers can
-          savor every moment. We believe that great coffee is an art form, and we're passionate
-          about crafting the perfect cup for every customer.
-        </p>
-      </section>
-
-      <section class="team-section">
-        <h2>Meet Our Team</h2>
-        <div class="team-grid">
-          <div class="team-member">
-            <div class="member-photo">👤</div>
-            <h3>John Doe</h3>
-            <p class="role">Head Barista</p>
-          </div>
-
-          <div class="team-member">
-            <div class="member-photo">👤</div>
-            <h3>Jane Smith</h3>
-            <p class="role">Coffee Specialist</p>
-          </div>
-
-          <div class="team-member">
-            <div class="member-photo">👤</div>
-            <h3>Mike Johnson</h3>
-            <p class="role">Operations Manager</p>
-          </div>
-        </div>
-      </section>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center px-4 lg:px-16 py-40">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+      <!-- Desktop Background -->
+      <img
+        src="@/assets/images/bg-about.png"
+        alt=""
+        class="hidden md:block w-full h-full object-cover"
+      />
+      <!-- Mobile Background -->
+      <img
+        src="@/assets/images/bg-about-mobile.png"
+        alt=""
+        class="block md:hidden w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/70"></div>
     </div>
-  </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 sm:px-6">
+      <h1
+        class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-brew-cream tracking-tight"
+      >
+        ABOUT
+      </h1>
+    </div>
+  </section>
+
+  <!-- About Content Section -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Your about content will go here -->
+      <p class="text-brew-cream text-center text-lg sm:text-xl">About content coming soon...</p>
+    </div>
+  </section>
+  <TheFooter />
 </template>
 
 <script setup lang="ts">
-// Team data and logic will go here
+import TheFooter from '@/components/layout/TheFooter.vue'
+import TheNavbar from '@/components/layout/TheNavbar.vue'
 </script>
