@@ -1,12 +1,18 @@
 <template>
   <button
-    class="relative w-10 h-10 rounded-full bg-brew-tan/20 flex items-center justify-center hover:bg-brew-tan/30 transition-colors flex-shrink-0"
+    :class="[
+      'relative w-10 h-10 rounded-full flex items-center justify-center transition-colors shrink-0',
+      customClass || 'bg-brew-tan/5 hover:bg-brew-tan/30',
+    ]"
     @click="emit('click')"
   >
     <!-- Badge -->
     <span
       v-if="badge && badge > 0"
-      class="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 bg-brew-tan text-brew-dark text-xs font-bold rounded-full flex items-center justify-center"
+      :class="[
+        'absolute -top-1 -right-1 min-w-5 h-5 px-1 text-xs font-bold rounded-full flex items-center justify-center',
+        badgeClass || 'bg-brew-tan text-brew-dark',
+      ]"
     >
       {{ badge > 9 ? '9+' : badge }}
     </span>
@@ -14,7 +20,7 @@
     <!-- Cart Icon -->
     <svg
       v-if="icon === 'cart'"
-      class="w-5 h-5 text-brew-cream"
+      :class="iconClass || 'w-5 h-5 text-brew-cream'"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -27,10 +33,26 @@
       />
     </svg>
 
+    <!-- Search Icon -->
+    <svg
+      v-if="icon === 'search'"
+      :class="iconClass || 'w-5 h-5 text-brew-cream'"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
+    </svg>
+
     <!-- User Icon -->
     <svg
       v-else-if="icon === 'user'"
-      class="w-5 h-5 text-brew-cream"
+      :class="iconClass || 'w-5 h-5 text-brew-cream'"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -46,7 +68,7 @@
     <!-- Wishlist Icon -->
     <svg
       v-else-if="icon === 'wishlist'"
-      class="w-5 h-5 text-brew-cream"
+      :class="iconClass || 'w-5 h-5 text-brew-cream'"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -63,8 +85,11 @@
 
 <script setup lang="ts">
 interface Props {
-  icon: 'cart' | 'user' | 'wishlist'
+  icon: string
   badge?: number
+  customClass?: string
+  iconClass?: string
+  badgeClass?: string
 }
 
 defineProps<Props>()

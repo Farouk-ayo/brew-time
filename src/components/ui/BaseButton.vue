@@ -37,7 +37,7 @@ const componentType = computed(() => {
 
 const buttonClasses = computed(() => {
   const baseClasses =
-    'inline-flex items-center justify-center font-semibold rounded-lg transition-all hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
+    'inline-flex items-center justify-center font-semibold rounded-lg transition-all hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer'
 
   const sizeClasses = {
     sm: 'px-6 py-2 text-sm',
@@ -46,7 +46,7 @@ const buttonClasses = computed(() => {
   }
 
   const variantClasses = {
-    primary: 'bg-brew-tan text-brew-dark hover:bg-brew-tan/90',
+    primary: 'bg-brew-tan text-brew-white hover:bg-brew-tan/90',
     secondary: 'bg-white text-brew-dark hover:bg-brew-cream',
     outline:
       'bg-transparent border-2 border-brew-cream text-brew-cream hover:bg-brew-cream hover:text-brew-dark',

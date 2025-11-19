@@ -1,9 +1,7 @@
 <template>
   <TheNavbar />
   <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center px-4 lg:px-16 py-40">
-    <!-- <TheNavbar /> -->
-
+  <section class="relative min-h-screen flex items-center justify-center px-4 lg:px-16">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 w-full h-full">
       <!-- Desktop Background -->
@@ -23,21 +21,16 @@
     </div>
 
     <!-- Main Content -->
-    <div ref="heroContent" class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div
+      ref="heroContent"
+      class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col justify-center pt-20"
+    >
       <!-- Main Heading -->
-      <div class="mb-2 sm:mb-4">
+      <div class="">
         <h1
-          class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-brew-cream leading-tight tracking-tight"
+          class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-brew-cream leading-tight tracking-tight"
         >
-          "SAVOR THE MOMENT
-        </h1>
-      </div>
-
-      <div class="mb-2 sm:mb-4">
-        <h1
-          class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-brew-cream leading-tight tracking-tight"
-        >
-          WITH EVERY SIP"
+          "SAVOR THE MOMENT WITH EVERY SIP"
         </h1>
       </div>
 
