@@ -1,62 +1,3 @@
-<template>
-  <TheNavbar />
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center px-4 lg:px-16">
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 w-full h-full">
-      <!-- Desktop Background -->
-      <img
-        src="@/assets/images/bg-home.png"
-        alt=""
-        class="hidden md:block w-full h-full object-cover"
-      />
-      <!-- Mobile Background -->
-      <img
-        src="@/assets/images/bg-home-mobile.png"
-        alt=""
-        class="block md:hidden w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-black/65"></div>
-      <div class="absolute inset-0 bg-linear-to-b from-transparent via-black/10 to-black/65"></div>
-    </div>
-
-    <!-- Main Content -->
-    <div
-      ref="heroContent"
-      class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col justify-center pt-20"
-    >
-      <!-- Main Heading -->
-      <div class="">
-        <h1
-          class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-brew-cream leading-tight tracking-tight"
-        >
-          "SAVOR THE MOMENT WITH EVERY SIP"
-        </h1>
-      </div>
-
-      <!-- Subtitle -->
-      <p
-        class="text-base sm:text-lg md:text-xl text-brew-cream/70 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4"
-      >
-        Discover our carefully crafted coffee blends, made with love and passion
-      </p>
-
-      <!-- CTA Buttons -->
-      <div
-        class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full sm:w-auto"
-      >
-        <BaseButton variant="secondary" size="lg" to="/about" class="w-full sm:w-auto">
-          About
-        </BaseButton>
-        <BaseButton variant="primary" size="lg" @click="handleOrderNow" class="w-full sm:w-auto">
-          Order Now
-        </BaseButton>
-      </div>
-    </div>
-  </section>
-  <TheFooter />
-</template>
-
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
@@ -84,3 +25,62 @@ onMounted(() => {
   }
 })
 </script>
+
+<template>
+  <TheNavbar />
+  <section class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 w-full h-full">
+      <img
+        src="@/assets/images/bg-home.png"
+        alt=""
+        class="hidden md:block w-full h-full object-cover"
+      />
+      <img
+        src="@/assets/images/bg-home-mobile.png"
+        alt=""
+        class="block md:hidden w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/65"></div>
+      <div class="absolute inset-0 bg-linear-to-b from-transparent via-black/10 to-black/65"></div>
+    </div>
+
+    <div
+      ref="heroContent"
+      class="relative z-10 text-center items-center max-w-xs md:max-w-3xl mx-auto flex flex-col justify-center pt-20 sm:pt-24 md:pt-28 pb-8"
+    >
+      <h1
+        class="relative text-6xl lg:text-7xl xl:text-8xl text-brew-cream tracking-tight mb-6 sm:mb-8 md:mb-10 px-4 before:content-[''] after:content-[''] before:absolute after:absolute before:w-8 before:h-8 lg:before:w-12 lg:before:h-12 after:w-8 after:h-8 lg:after:w-12 lg:after:h-12 before:bg-[url('@/assets/icons/apostrophe-t.svg')] after:bg-[url('@/assets/icons/apostrophe-b.svg')] before:bg-contain after:bg-contain before:bg-no-repeat after:bg-no-repeat before:top-0 before:left-0 after:bottom-0 after:right-0 before:opacity-90 after:opacity-90"
+      >
+        SAVOR THE MOMENT WITH EVERY SIP
+      </h1>
+
+      <p
+        class="text-sm sm:text-base md:text-lg lg:text-xl text-brew-cream/70 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto px-2"
+      >
+        Discover our carefully crafted coffee blends, made with love and passion
+      </p>
+
+      <div
+        class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-2"
+      >
+        <BaseButton
+          variant="secondary"
+          size="lg"
+          to="/about"
+          class="w-auto min-w-[140px] hidden! md:inline-block!"
+        >
+          About
+        </BaseButton>
+        <BaseButton
+          variant="primary"
+          size="lg"
+          @click="handleOrderNow"
+          class="w-auto min-w-[140px]"
+        >
+          Order Now
+        </BaseButton>
+      </div>
+    </div>
+  </section>
+  <TheFooter />
+</template>

@@ -1,84 +1,3 @@
-<template>
-  <footer class="relative bg-brew-dark border-t border-brew-tan/10">
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-      <!-- Desktop Background -->
-      <img
-        src="@/assets/images/bg-footer.png"
-        alt=""
-        class="hidden sm:block w-full h-full object-cover"
-      />
-      <!-- Mobile Background (optional - you can use same or different) -->
-      <img
-        src="@/assets/images/bg-footer-mobile.png"
-        alt=""
-        class="block sm:hidden w-full h-full object-cover"
-      />
-    </div>
-
-    <!-- Decorative Coffee Cup Overlays - Hidden on mobile -->
-    <div class="hidden md:block absolute inset-0 overflow-hidden opacity-10">
-      <div
-        v-for="i in 3"
-        :key="i"
-        class="absolute rounded-full border-4 border-brew-cream"
-        :style="{
-          width: '400px',
-          height: '400px',
-          top: `${i * 30}%`,
-          left: `${i * 25}%`,
-        }"
-      >
-        <!-- Coffee latte art pattern -->
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-32 h-32 rounded-full border-2 border-brew-cream"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      <!-- Top Section: Logo and Social Icons -->
-      <div class="mb-10 sm:mb-12 text-center sm:text-left">
-        <RouterLink to="/" class="inline-block mb-4 sm:mb-6">
-          <img
-            src="@/assets/icons/brewtime.svg"
-            alt="BrewTime Logo"
-            class="h-12 sm:h-16 w-auto mx-auto sm:mx-0"
-          />
-        </RouterLink>
-
-        <div class="flex items-center justify-center sm:justify-start gap-3 sm:gap-4">
-          <SocialIcon
-            v-for="social in socialLinks"
-            :key="social.name"
-            :icon="social.icon"
-            :href="social.href"
-            :aria-label="social.name"
-          />
-        </div>
-      </div>
-
-      <!-- Navigation Columns -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-10 sm:mb-12">
-        <FooterColumn
-          v-for="column in footerColumns"
-          :key="column.title"
-          :title="column.title"
-          :links="column.links"
-        />
-      </div>
-
-      <!-- Bottom Section: Copyright -->
-      <div class="pt-6 sm:pt-8 border-t border-brew-tan/10">
-        <p class="text-brew-cream/60 text-xs sm:text-sm text-center">
-          © 2023 Brew Time. All Rights Reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
-</template>
-
 <script setup lang="ts">
 import FooterColumn from '../ui/FooterColumn.vue'
 import SocialIcon from '../ui/icons/SocialIcon.vue'
@@ -142,3 +61,79 @@ const footerColumns: FooterColumnData[] = [
   },
 ]
 </script>
+
+<template>
+  <footer class="relative bg-brew-dark border-t border-brew-tan/10">
+    <div class="absolute inset-0">
+      <img
+        src="@/assets/images/bg-footer-mobile.png"
+        alt=""
+        class="block sm:hidden w-full h-full object-cover"
+      />
+      <img
+        src="@/assets/images/bg-footer.png"
+        alt=""
+        class="hidden sm:block w-full h-full object-cover"
+      />
+    </div>
+
+    <div class="hidden md:block absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
+      <div
+        v-for="i in 3"
+        :key="i"
+        class="absolute rounded-full border-4 border-brew-cream"
+        :style="{
+          width: '400px',
+          height: '400px',
+          top: `${i * 30}%`,
+          left: `${i * 25}%`,
+        }"
+      >
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-32 h-32 rounded-full border-2 border-brew-cream"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div
+        class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10 lg:gap-16 mb-12 sm:mb-16"
+      >
+        <div class="flex flex-col items-start">
+          <RouterLink to="/" class="inline-block mb-6 lg:mb-8">
+            <img
+              src="@/assets/icons/brewtime.svg"
+              alt="BrewTime Logo"
+              class="h-16 sm:h-20 lg:h-24 w-auto"
+            />
+          </RouterLink>
+
+          <div class="flex items-center gap-2 lg:gap-2">
+            <SocialIcon
+              v-for="social in socialLinks"
+              :key="social.name"
+              :icon="social.icon"
+              :href="social.href"
+              :aria-label="social.name"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 flex-1">
+          <FooterColumn
+            v-for="column in footerColumns"
+            :key="column.title"
+            :title="column.title"
+            :links="column.links"
+          />
+        </div>
+      </div>
+
+      <div class="pt-6 sm:pt-8 border-t border-brew-tan/10">
+        <p class="text-brew-cream/60 text-xs sm:text-sm text-center">
+          © 2023 Brew Time. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</template>

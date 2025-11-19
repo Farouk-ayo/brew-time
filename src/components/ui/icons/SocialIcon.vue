@@ -3,12 +3,12 @@
     :href="href"
     target="_blank"
     rel="noopener noreferrer"
-    class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brew-cream flex items-center justify-center hover:bg-brew-tan transition-all hover:scale-110 transform"
+    class="relative w-10 h-10 rounded-full flex items-center justify-center transition-colors shrink-0 bg-brew-tan/5 hover:bg-brew-tan/30"
   >
     <!-- Facebook -->
     <svg
       v-if="icon === 'facebook'"
-      class="w-5 h-5 sm:w-6 sm:h-6 text-brew-dark"
+      class="w-5 h-5 sm:w-6 sm:h-6 text-brew-cream"
       fill="currentColor"
       viewBox="0 0 24 24"
     >
@@ -20,7 +20,7 @@
     <!-- Google -->
     <svg
       v-else-if="icon === 'google'"
-      class="w-5 h-5 sm:w-6 sm:h-6 text-brew-dark"
+      class="w-5 h-5 sm:w-6 sm:h-6 text-brew-cream"
       fill="currentColor"
       viewBox="0 0 24 24"
     >
@@ -41,7 +41,7 @@
     <!-- Apple -->
     <svg
       v-else-if="icon === 'apple'"
-      class="w-5 h-5 sm:w-6 sm:h-6 text-brew-dark"
+      class="w-5 h-5 sm:w-6 sm:h-6 text-brew-cream"
       fill="currentColor"
       viewBox="0 0 24 24"
     >
@@ -53,7 +53,7 @@
     <!-- Instagram -->
     <svg
       v-else-if="icon === 'instagram'"
-      class="w-5 h-5 sm:w-6 sm:h-6 text-brew-dark"
+      class="w-5 h-5 sm:w-6 sm:h-6 text-brew-cream"
       fill="currentColor"
       viewBox="0 0 24 24"
     >
