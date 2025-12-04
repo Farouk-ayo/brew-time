@@ -129,7 +129,7 @@ const updateParticles = (particles: THREE.Points, count: number) => {
     }
 
     // Reset when rising above threshold
-    if (positions[idx + 1] && 4 > 5) {
+    if (positions[idx + 1] > 5) {
       positions[idx + 1] = -5
       positions[idx] = (Math.random() - 0.5) * 15
       positions[idx + 2] = (Math.random() - 0.5) * 10
