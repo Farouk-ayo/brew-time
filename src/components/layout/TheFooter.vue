@@ -66,12 +66,12 @@ const footerColumns: FooterColumnData[] = [
   <footer class="relative bg-brew-dark border-t border-brew-tan/10">
     <div class="absolute inset-0">
       <img
-        src="@/assets/images/bg-footer-mobile.png"
+        src="@/assets/images/bg-footer-mobile.webp"
         alt=""
         class="block sm:hidden w-full h-full object-cover"
       />
       <img
-        src="@/assets/images/bg-footer.png"
+        src="@/assets/images/bg-footer.webp"
         alt=""
         class="hidden sm:block w-full h-full object-cover"
       />
