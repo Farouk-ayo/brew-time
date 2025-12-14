@@ -7,13 +7,13 @@
     <div class="absolute inset-0">
       <!-- Desktop Background -->
       <img
-        src="@/assets/images/bg-contact.webp"
+        src="/images/bg-contact.webp"
         alt=""
         class="hidden md:block w-full h-full object-cover"
       />
       <!-- Mobile Background -->
       <img
-        src="@/assets/images/bg-contact-mobile.webp"
+        src="/images/bg-contact-mobile.webp"
         alt=""
         class="block md:hidden w-full h-full object-cover"
       />

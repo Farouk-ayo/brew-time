@@ -208,11 +208,7 @@ onUnmounted(() => {
     <canvas ref="webglCanvas" class="absolute inset-0 z-5"></canvas>
 
     <div class="absolute inset-0 z-0">
-      <img
-        src="@/assets/images/bg-coffee-shop.webp"
-        alt="Coffee Shop"
-        class="w-full h-full object-cover"
-      />
+      <img src="/images/bg-coffee-shop.webp" alt="Coffee Shop" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black/65"></div>
     </div>
 

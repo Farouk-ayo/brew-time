@@ -30,13 +30,9 @@ onMounted(() => {
   <TheNavbar />
   <section class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
     <div class="absolute inset-0 w-full h-full">
+      <img src="/images/bg-home.webp" alt="" class="hidden md:block w-full h-full object-cover" />
       <img
-        src="@/assets/images/bg-home.webp"
-        alt=""
-        class="hidden md:block w-full h-full object-cover"
-      />
-      <img
-        src="@/assets/images/bg-home-mobile.webp"
+        src="/images/bg-home-mobile.webp"
         alt=""
         class="block md:hidden w-full h-full object-cover"
       />
