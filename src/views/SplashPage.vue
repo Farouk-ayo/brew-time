@@ -1,3 +1,60 @@
+<template>
+  <div class="relative min-h-screen w-full overflow-hidden bg-brew-dark">
+    <canvas ref="webglCanvas" class="absolute inset-0 z-5"></canvas>
+
+    <div class="absolute inset-0 z-0">
+      <img src="/images/bg-coffee-shop.webp" alt="Coffee Shop" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/65"></div>
+    </div>
+
+    <div
+      class="absolute -top-20 left-0 right-0 h-16 md:h-24 lg:h-48 overflow-hidden z-0 opacity-10"
+    >
+      <div ref="topScroll" class="flex gap-6 md:gap-12 whitespace-nowrap">
+        <img
+          v-for="i in 20"
+          :key="i"
+          src="@/assets/icons/brewtime-outline.svg"
+          alt=""
+          class="h-14 md:h-20 lg:h-48 w-auto shrink-0"
+        />
+      </div>
+    </div>
+
+    <div
+      class="absolute -bottom-20 left-0 right-0 h-16 md:h-24 lg:h-48 overflow-hidden z-0 opacity-10"
+    >
+      <div ref="bottomScroll" class="flex gap-6 md:gap-12 whitespace-nowrap">
+        <img
+          v-for="i in 20"
+          :key="i"
+          src="@/assets/icons/brewtime-outline.svg"
+          alt=""
+          class="h-14 md:h-20 lg:h-48 w-auto shrink-0"
+        />
+      </div>
+    </div>
+
+    <div
+      class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8 gap-6 md:gap-12 lg:gap-16"
+    >
+      <div ref="logoRef">
+        <img src="@/assets/icons/brewtime.svg" alt="BrewTime" class="w-48 md:w-80 lg:w-md h-auto" />
+      </div>
+
+      <div ref="creditsRef" class="flex items-center gap-4 md:gap-8 lg:gap-12 text-white">
+        <div class="hidden md:block w-16 lg:w-24 h-px bg-white/30"></div>
+        <img
+          src="@/assets/icons/rage-media.svg"
+          alt="Rage Media"
+          class="h-10 md:h-14 lg:h-16 w-auto"
+        />
+        <div class="hidden md:block w-16 lg:w-24 h-px bg-white/30"></div>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
@@ -202,60 +259,3 @@ onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
 </script>
-
-<template>
-  <div class="relative min-h-screen w-full overflow-hidden bg-brew-dark">
-    <canvas ref="webglCanvas" class="absolute inset-0 z-5"></canvas>
-
-    <div class="absolute inset-0 z-0">
-      <img src="/images/bg-coffee-shop.webp" alt="Coffee Shop" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-black/65"></div>
-    </div>
-
-    <div
-      class="absolute -top-20 left-0 right-0 h-16 md:h-24 lg:h-48 overflow-hidden z-0 opacity-10"
-    >
-      <div ref="topScroll" class="flex gap-6 md:gap-12 whitespace-nowrap">
-        <img
-          v-for="i in 20"
-          :key="i"
-          src="@/assets/icons/brewtime-outline.svg"
-          alt=""
-          class="h-14 md:h-20 lg:h-48 w-auto shrink-0"
-        />
-      </div>
-    </div>
-
-    <div
-      class="absolute -bottom-20 left-0 right-0 h-16 md:h-24 lg:h-48 overflow-hidden z-0 opacity-10"
-    >
-      <div ref="bottomScroll" class="flex gap-6 md:gap-12 whitespace-nowrap">
-        <img
-          v-for="i in 20"
-          :key="i"
-          src="@/assets/icons/brewtime-outline.svg"
-          alt=""
-          class="h-14 md:h-20 lg:h-48 w-auto shrink-0"
-        />
-      </div>
-    </div>
-
-    <div
-      class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8 gap-6 md:gap-12 lg:gap-16"
-    >
-      <div ref="logoRef">
-        <img src="@/assets/icons/brewtime.svg" alt="BrewTime" class="w-48 md:w-80 lg:w-md h-auto" />
-      </div>
-
-      <div ref="creditsRef" class="flex items-center gap-4 md:gap-8 lg:gap-12 text-white">
-        <div class="hidden md:block w-16 lg:w-24 h-px bg-white/30"></div>
-        <img
-          src="@/assets/icons/rage-media.svg"
-          alt="Rage Media"
-          class="h-10 md:h-14 lg:h-16 w-auto"
-        />
-        <div class="hidden md:block w-16 lg:w-24 h-px bg-white/30"></div>
-      </div>
-    </div>
-  </div>
-</template>
